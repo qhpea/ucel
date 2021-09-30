@@ -6,7 +6,10 @@ for ep in pkg_resources.iter_entry_points(group='ucel.compute'):
    named_objects.update({ep.name: ep.load()})
 
 class Daemon:
-    """manages cluster"""
+    """manages a ucel cluster"""
     
     def tick(self):
         "Update all of the computes and stuff in an orderly fassion"
+    
+    def run(self):
+        "the entrypoint"
